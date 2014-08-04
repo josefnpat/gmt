@@ -1,0 +1,11 @@
+<?php
+
+define("GMT_DB_HOST","localhost");
+define("GMT_DB_USER","gmt");
+define("GMT_DB_PASS","");
+define("GMT_DB_NAME","gmt");
+
+define("GMT_NAME","Gas Mileage Tracker");
+
+// Uncomment this to have a password.
+//define("GMT_PASS","foo");
