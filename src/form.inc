@@ -12,14 +12,11 @@ if(isset($errors) and count($errors) > 0 ){
     echo '<div class="alert alert-danger" role="alert">'.$error.'</div>'."\n";
   }
 }
-
 if(isset($msg) and count($msg) > 0 ){
   foreach($msg as $message){
     echo '<div class="alert alert-success" role="alert">'.$message.'</div>'."\n";
   }
 }
-
-
 ?>
 
 <!-- Prepended text-->
@@ -31,9 +28,11 @@ if(isset($msg) and count($msg) > 0 ){
       <input id="cost"
         name="cost"
         class="form-control"
-        placeholder="1.23"
+        placeholder="1.239"
         <?php if($entry){ echo 'value="'.$entry['cost'].'"'; } ?>
-        type="text"
+        type="number"
+        min="0"
+        step="any"
         required="">
     </div>
     <p class="help-block">Cost of gas per gallon.</p>
@@ -50,7 +49,9 @@ if(isset($msg) and count($msg) > 0 ){
         class="form-control"
         placeholder="123.4"
         <?php if($entry){ echo 'value="'.$entry['distance'].'"'; } ?>
-        type="text"
+        type="number"
+        min="0"
+        step="any"
         required="">
       <span class="input-group-addon">mi</span>
     </div>
@@ -65,9 +66,11 @@ if(isset($msg) and count($msg) > 0 ){
       <input id="capacity"
         name="capacity"
         class="form-control"
-        placeholder="12.34"
+        placeholder="12.345"
         <?php if($entry){ echo 'value="'.$entry['capacity'].'"'; } ?>
-        type="text"
+        type="number"
+        min="0"
+        step="any"
         required="">
       <span class="input-group-addon">gal</span>
     </div>
@@ -81,7 +84,7 @@ if(isset($msg) and count($msg) > 0 ){
   <input id="date"
     name="date"
     <?php if($entry){ echo 'value="'.date("Y-m-d",$entry['date']).'"'; } ?>
-    type="text"
+    type="datetime"
     placeholder="<?php echo date('Y-m-d'); ?>"
     class="form-control input-md">
   <span class="help-block">Date of entry</span>  
