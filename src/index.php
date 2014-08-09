@@ -97,6 +97,8 @@ if(count($db_entries)>0){
   echo '</table>';
 
   ?>
+<img src="chart.php" width="100%" />
+
   <ul>
     <li>Total Average Mileage: <?php echo round($total_distance/$total_capacity,2); ?> mi/gal</li>
     <li>Total Distance: <?php echo $total_distance; ?> mi (Average: <?php echo round($total_distance/count($db_entries),2); ?> mi)</li>
