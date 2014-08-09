@@ -77,10 +77,12 @@ if(count($db_entries)>0){
   $total_distance =0;
   $total_capacity =0;
   $total_cost     =0;
+  $sum_paid       =0;
   foreach($db_entries as $db_entry){
     $total_distance +=$db_entry['distance'];
     $total_capacity +=$db_entry['capacity'];
     $total_cost     +=$db_entry['cost'];
+    $sum_paid       +=$db_entry['cost']*$db_entry['capacity'];
 ?>
 <tr>
   <td><?php echo date("Y-m-d",$db_entry['date']); ?></td>
@@ -99,7 +101,7 @@ if(count($db_entries)>0){
     <li>Total Average Mileage: <?php echo round($total_distance/$total_capacity,2); ?> mi/gal</li>
     <li>Total Distance: <?php echo $total_distance; ?> mi (Average: <?php echo round($total_distance/count($db_entries),2); ?> mi)</li>
     <li>Total Capacity Filled: <?php echo $total_capacity; ?> gal (Average: <?php echo round($total_capacity/count($db_entries),2); ?> gal)</li>
-    <li>Total Cost: $<?php echo $total_cost; ?> (Average: $<?php echo round($total_capacity/count($db_entries),2); ?>/gal)</li>
+    <li>Sum Paid: $<?php echo round($sum_paid,2); ?> (Average: $<?php echo round($total_cost/count($db_entries),2); ?>/gal)</li>
   </ul>
   <?php
 
