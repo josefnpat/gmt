@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git clone https://github.com/elliottb/phpgraphlib.git src/phpgraphlib
+
 VERSION="3.2.0"
 TARGET_DIR="bootstrap-$VERSION-dist"
 TARGET_FILE=$TARGET_DIR.zip

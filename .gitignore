@@ -2,3 +2,4 @@ src/config.php
 src/.htaccess
 *.zip
 src/bootstrap
+src/phpgraphlib
